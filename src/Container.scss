@@ -1,0 +1,27 @@
+.increment-decrement-container  {
+  display: flex;
+  justify-content: center;
+
+  .number-show {
+    position: relative;
+  }
+  
+  .button {
+    
+    &-center {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-container-row{
+      display: flex;
+      flex-direction: row;
+    }
+
+    &-increment,
+    &-decrement {
+      height: 50px;
+      width: 100px;
+    }
+  }
+}
