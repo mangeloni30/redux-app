@@ -9,8 +9,8 @@ function Container() {
         <label id="showLabel">Do a click in increment button</label>
         <div className="button-container-center">
           <div className="button-container-row">
-            <button className="button-increment">Decrement</button>
-            <button className="button-decrement">Increment</button>
+            <button className="button-increment" type="button">Decrement</button>
+            <button className="button-decrement" type="button">Increment</button>
           </div>
         </div>
       </div>
