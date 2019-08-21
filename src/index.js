@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Container from './components/Container';
+import CounterContainer from './components/counter/CounterContainer';
 import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { productReducer } from './components/reducers/productsReducer';
@@ -27,7 +27,7 @@ const store = createStore(allReducers, initialState);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Container />
+    <CounterContainer />
   </Provider>,
   document.getElementById('root')
 );

@@ -1,0 +1,64 @@
+.increment-decrement-container  {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  padding-top: 100px;
+
+  .number-show {
+    position: relative;
+  }
+
+  .counter-show__div {
+    display: flex;
+    justify-content: center;
+
+    p{
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffff
+    }
+  }
+
+  .button {
+    &-center {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+
+    &-container-center {
+      padding-top: 25px;
+      width: 50%;
+      background-image: linear-gradient(to right, #a73737 , #7a2828);
+    }
+
+    &-container-row{
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
+
+    &-increment,
+    &-decrement {
+      height: 50px;
+      width: 100px;
+      font-weight: 500;
+      background-color: #ffff;
+      font-family: sans-serif;
+      cursor: pointer;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease 0s;
+      border-radius: 45px;
+
+      &:hover {
+        background-color: #2EE59D;
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+        transform: translateY(-7px);
+      }
+    }
+
+    &-decrement {
+      margin-right: 15px;
+    }
+  }
+}
