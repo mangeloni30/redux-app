@@ -5,7 +5,6 @@ import {
 } from '../constants/counterConstants';
 
 export const counterReducer = (state = initialState, action) => {
-  console.log('ACTION: ', action)
   switch ( action.type ) {
     case INCREMENT_COUNTER:
       return state + 1;
