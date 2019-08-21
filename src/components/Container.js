@@ -2,27 +2,32 @@ import React from 'react';
 import './Container.scss';
 import { connect } from 'react-redux';
 import { userAction } from './actions/userActions';
-import { counterAction } from './actions/counterActions';
+import { 
+  incrementCounterAction, 
+  decrementCounterAction 
+} from './actions/incrementCounterAction';
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
     this.onUserAction = this.onUserAction.bind(this);
-    this.onCounterAction = this.onCounterAction.bind(this);
+    this.onIncrementCounterAction = this.onIncrementCounterAction.bind(this);
+    this.onDecrementCounterAction = this.onDecrementCounterAction.bind(this);
   }
 
   onUserAction(){
-    console.log('LLAMO')
     this.props.onUserAction();
   }
 
-  onCounterAction() {
-    this.props.onCounterAction();
+  onIncrementCounterAction() {
+    this.props.onIncrementCounterAction();
   }
 
-  render(){ 
-    console.log('THIS.PROPSSS', this.props);
-    console.log('onUserAction: ', typeof this.props.onUserAction)
+  onDecrementCounterAction() {
+    this.props.onDecrementCounterAction();
+  }
+
+  render(){
     return(
       <div className="increment-decrement-container">
         <div>
@@ -34,13 +39,14 @@ class Container extends React.Component {
               <button
                 className="button-increment"
                 type="button"
+                onClick={this.onDecrementCounterAction}
               >
                 Decrement
               </button>
               <button 
                 className="button-decrement" 
                 type="button"
-                onClick={this.onCounterAction}
+                onClick={this.onIncrementCounterAction}
               >
                 Increment
               </button>
@@ -60,7 +66,8 @@ const mapStateToProps = (state) => ({
 
 const mapActionsToProps = {
   onUserAction: userAction,
-  onCounterAction: counterAction
+  onIncrementCounterAction: incrementCounterAction,
+  onDecrementCounterAction: decrementCounterAction
 }
 
 export default connect(mapStateToProps, mapActionsToProps)(Container);
