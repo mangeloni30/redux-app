@@ -1,7 +1,6 @@
 import React from 'react';
 import './Container.scss';
 import { connect } from 'react-redux';
-import { userAction } from '../actions/userActions';
 import { 
   incrementCounterAction, 
   decrementCounterAction 
@@ -15,13 +14,8 @@ import {
 class CounterContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.onUserAction = this.onUserAction.bind(this);
     this.onIncrementCounterAction = this.onIncrementCounterAction.bind(this);
     this.onDecrementCounterAction = this.onDecrementCounterAction.bind(this);
-  }
-
-  onUserAction(){
-    this.props.onUserAction();
   }
 
   /**
@@ -50,6 +44,11 @@ class CounterContainer extends React.Component {
             <p>
               {this.props.counter}
             </p>
+            {this.props.counter === 10 && (
+              <p>
+                {this.props.user}
+              </p>  
+            )}
           </div>
           <div className="button-container-row">
             <button
@@ -80,7 +79,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapActionsToProps = {
-  onUserAction: userAction,
   onIncrementCounterAction: incrementCounterAction,
   onDecrementCounterAction: decrementCounterAction
 }
